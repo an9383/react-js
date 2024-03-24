@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';  //패키지 이름
 import './index.css';
-import App from './App';
+import App from './App';  //App컴포넌트에서 가져와줘
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));  //index.html에서 사용.
 root.render(
   <React.StrictMode>
     <App />
