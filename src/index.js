@@ -1,6 +1,7 @@
+/* eslint-disable*/
 import React from 'react';
 import ReactDOM from 'react-dom/client';  //패키지 이름
-import './index.css';
+//import './index.css';
 import App from './App';  //App컴포넌트에서 가져와줘
 import reportWebVitals from './reportWebVitals';
 

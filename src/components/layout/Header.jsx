@@ -1,13 +1,23 @@
-//기명함수
+import Nav from './Nav'
 
-function Header() {
-  return (
-    <header>
-      <h1>logo</h1>
-    </header>
-  )
+function Header({ title, nav }) {
+    return (
+        <header>
+            <h1>{title}</h1>
+            <Nav nav={nav} />
+        </header>
+    )
 }
 
-//JSX처리방식임.
+// function Header(props) {
+// return (
+//   // props.nav = navArr
+//   <header>
+//       <h1>{props.title}</h1>
+//       <Nav nav={props.nav} />
+//   </header>
+// )
+// }
 
-export default Header
+//JSX처리방식임.
+export default Header;
