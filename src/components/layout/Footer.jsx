@@ -1,9 +1,10 @@
 /* eslint-disable*/
 
 const Footer = () => (
-    <footer>
+  <footer>
       <p>&copy; 2024</p>
-    </footer>
-  )
+  </footer>
+)
 
-  export default Footer
+
+export default Footer

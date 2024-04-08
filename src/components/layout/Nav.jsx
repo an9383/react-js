@@ -94,14 +94,16 @@
 //   )
 // }
 
-function Nav({ nav }) {
-  // const { nav } = props;
+const Nav = ({ nav }) => {
+  // const { nav } = props
+
   return (
       <nav>
           <ul>
               {nav.map((item, index) => (
+                  // item = { title: 'Home' }
                   <li key={index}>
-                      <a href={'/sub/' + item.title}>{item.title}</a>
+                      <a href="#">{item.title}</a>
                   </li>
               ))}
           </ul>

@@ -1,49 +1,45 @@
 /* eslint-disable*/
-import React, { useState } from 'react';
+import { useState } from 'react'
 
 const Event = () => {
+    function handleClick(event) {
+        // alert('버튼 클릭')
+        console.log(event) // SyntheticBaseEvent {_reactName: "onClick", _targetInst: FiberNode, type: "click", nativeEvent: MouseEvent, target: button, …}
+        console.log(event.target) // <button>버튼</button>
+        console.log(event.type) // click
+    }
 
-    function handleClick(event){
-        //alert('버튼클릭')
-        console.log(event); // 이벤트 객체 (MouseEvent)
-        console.log(event.target); // 이벤트가 발생한 DOM 요소 (button)
-        console.log(event.type); // 이벤트 타입 (click)
-    }
     const handleChange = (event) => {
-      document.querySelector(".text-value").innerText = event.target.value;
+        document.querySelector('.text').innerText = event.target.value
     }
+
     const handleOver = (event) => {
         event.target.style.backgroundColor = 'red'
-        event.target.style.fontColor = 'white'
+        event.target.style.color = 'white'
     }
-    const [state,setState] = useState(0)
+
+    const [state, setState] = useState(0)
 
     const handleState = () => {
-        setState(state +1)
-    }
-
-    const [state2,setState2] = useState(0)
-
-    const handleState2 = () => {
-        setState2(state2 +1)
+        setState(state + 1)
     }
 
     return (
         <div>
             <h2>클릭하여 상태 변경</h2>
-            <button onClick={handleState}>{state}</button>
-            {state >= 5 ? <p>5이상</p>:<p>5이하</p>}
+            <button onClick={handleState}>클릭 : {state}</button>
+            {state >= 5 ? <p>5 이상</p> : <p>5 미만</p>}
 
-            <h1>이벤트</h1>
-            <button onClick={handleState2}>{state2}</button>
+            <h1>Event</h1>
+            <h2>클릭 이벤트</h2>
+            <button onClick={handleClick}>버튼</button>
 
             <h2>입력 이벤트</h2>
-            <input onChange={handleChange} type="text" placeholder="문구를 입력해주세요." />
-            <div className="text-value"></div>
+            <input type="text" onChange={handleChange} />
+            <div className="text"></div>
 
             <h2>마우스 오버 이벤트</h2>
             <div onMouseOver={handleOver}>마우스 오버</div>
-
         </div>
     )
 }
