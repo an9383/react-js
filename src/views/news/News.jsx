@@ -1,16 +1,31 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 function News() {
     const [news, setNews] = useState([])
     // 마운트 시에만 실행
     useEffect(() => {
-      fetch(`https://newsapi.org/v2/top-headlines?country=kr&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
-            .then((response) => response.json())  //json 형태로 변환
-            .then((data) =>{
-              console.log(data)
-              setNews(data.articles)
-            })  //fetch함수에서는 then이 두개 들어감.
-            .catch((error) => console.error(error))
+      // fetch(`https://newsapi.org/v2/top-headlines?country=kr&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
+      //       .then((response) => response.json())  //json 형태로 변환
+      //       .then((data) =>{
+      //         console.log(data)
+      //         setNews(data.articles)
+      //       })  //fetch함수에서는 then이 두개 들어감.
+      //       .catch((error) => console.error(error))
+
+      //async/await
+        const fetchData = async() =>{
+          try{
+             // const response = await fetch(`https://newsapi.org/v2/top-headlines?country=kr&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
+             const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`)
+             //const data = await response.json()
+             //console.log(data)
+              setNews(response.data.articles)
+            } catch(error) {
+             console.error(error)
+            }
+          }
+        fetchData()
     }, [])
 
     return (
