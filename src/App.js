@@ -7,6 +7,8 @@ import Home from './components/views/Home/Home';
 //import Cat from "./Cat";
 import Event from './grammar/Event';
 import State from './grammar/State';
+import UseEffect from './grammar/UseEffect';
+
 
 // function App() {
 //   //  const navArr = [{title:'Home'}, {title:'About'}, {title:'SignIn'},]
@@ -33,6 +35,7 @@ const App = () => {
         {/* <Cat name="여름이" age="2"/>
         <Cat name="가을이" age="3"/>
         <Cat name="겨울이" age="4"/> */}
+        <UseEffect />
         <State />
         <Event />
         <Header title="Dashboard" nav={navArr} />
