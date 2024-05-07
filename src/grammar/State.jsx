@@ -14,7 +14,7 @@ function State() {
 
     // let name ='김겨울'
     // function changeName(name) {
-
+        
     //     name = name ==='김겨울'?'김가을':'김겨울'
     //     // name = '김가을'
     //     console.log(name)
@@ -38,11 +38,11 @@ function State() {
     function changeName() {
         setName(name === '김겨울'?'김가을':'김겨울')
     }
-
+    
     function increase() {
         setNumber(number+1)
     }
-
+    
     function decrease() {
         setNumber(number-1)
     }
@@ -83,7 +83,7 @@ function State() {
                     {sortArr.map((item,index) => (
                         <li key = {index} className = {selected === index ? 'active': ''} onClick={()=> setSelected(index)}>
                             {item.icon} {item.value}
-                        </li>
+                        </li> 
                     ))}
                 </SortStyled>
             </div>
@@ -120,5 +120,6 @@ const SortStyled = styled.ul`
         font-size: 30px;
     }
 `
+
 
 export default State
